@@ -3,24 +3,25 @@
 var c=document.getElementById('myCanvas');
 var ctx=c.getContext('2d'); 
 
-var b=document.getElementById('powerBtn');
+var pb=document.getElementById('powerBtn');
 
 var rb=document.getElementById('rightBtn');
 var lb=document.getElementById('leftBtn');
 
 var ub=document.getElementById('upBtn');
 var db=document.getElementById('downBtn');
-
  
 var running=true;
 var finished=false;
+
 var score=0;
 
 var isCollision;
 
 var WIDTH=200+100;
 var HEIGHT=400-250;
-// var speed=50;
+
+var speed=50;
 
 // http://images.clipartpanda.com/car-clipart-top-view-red-car-top-view-hi.png
 
@@ -40,35 +41,11 @@ var keys=[];
 // myMother.changeName("Doe");
 
 //Functions
-var dash={
-  x:30,
-  y:0,
-  speed:0,
-  width:10,
-  height:30
-};
+var dash=new Dash();
 
+var car=new Car();
 
-
-var car={ 
-  x:150,
-  y:110,
-  color:'red',
-  turnSpeed:1,
-  moveSpeed:1,
-
-  width:70,
-  height:30
-};
-
-var truck={ 
-  x:20,
-  y:0,
-  speed:5,
-  color:'black',  
-  width:80,
-  height:45
-};
+var truck=new Truck();
 
 
 //left and right by KEYS LISTENTERS
